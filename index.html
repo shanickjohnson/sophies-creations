@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophie's Creations - Product Catalogue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         // Custom Tailwind configurations to match exact brand colors from the logo
@@ -12,8 +15,12 @@
                 extend: {
                     colors: {
                         brandPink: '#ff5cb8',
+                        brandPinkText: '#c2247a',
                         brandGreen: '#00a859',
                         brandDark: '#09090b',
+                    },
+                    fontFamily: {
+                        display: ['Fredoka', 'sans-serif'],
                     }
                 }
             }
@@ -31,16 +38,16 @@
             <div class="flex items-center gap-3">
                 <img src="logo-transparency.png" alt="Sophie's Creations Logo" class="h-16 w-auto object-contain">
                 <div class="flex flex-col">
-                    <span class="text-xl font-black tracking-tight text-brandDark uppercase">Sophies <span class="text-brandPink">Creations</span></span>
+                    <span class="font-display text-xl font-black tracking-tight text-brandDark uppercase">Sophies <span class="text-brandPinkText">Creations</span></span>
                     <span class="text-[10px] text-gray-500 font-medium italic hidden sm:inline">I put the personality in gift-giving!</span>
                 </div>
             </div>
             
             <nav class="hidden md:flex gap-2 text-sm font-semibold text-gray-600">
                 <button data-target="all" class="nav-filter px-4 py-1.5 rounded-full bg-brandPink text-white font-bold transition">All Products</button>
-                <button data-target="drinkware" class="nav-filter px-4 py-1.5 rounded-full hover:text-brandPink transition">Drinkware</button>
-                <button data-target="bags" class="nav-filter px-4 py-1.5 rounded-full hover:text-brandPink transition">Bags</button>
-                <button data-target="accessories" class="nav-filter px-4 py-1.5 rounded-full hover:text-brandPink transition">Accessories</button>
+                <button data-target="drinkware" class="nav-filter px-4 py-1.5 rounded-full hover:text-brandPinkText transition">Drinkware</button>
+                <button data-target="bags" class="nav-filter px-4 py-1.5 rounded-full hover:text-brandPinkText transition">Bags</button>
+                <button data-target="accessories" class="nav-filter px-4 py-1.5 rounded-full hover:text-brandPinkText transition">Accessories</button>
             </nav>
 
             <div class="flex items-center gap-4">
@@ -50,9 +57,9 @@
 
         <nav class="md:hidden flex gap-2 overflow-x-auto px-4 pb-3 text-sm font-semibold text-gray-600" aria-label="Product categories">
             <button data-target="all" class="nav-filter shrink-0 px-4 py-1.5 rounded-full bg-brandPink text-white font-bold transition">All Products</button>
-            <button data-target="drinkware" class="nav-filter shrink-0 px-4 py-1.5 rounded-full hover:text-brandPink transition">Drinkware</button>
-            <button data-target="bags" class="nav-filter shrink-0 px-4 py-1.5 rounded-full hover:text-brandPink transition">Bags</button>
-            <button data-target="accessories" class="nav-filter shrink-0 px-4 py-1.5 rounded-full hover:text-brandPink transition">Accessories</button>
+            <button data-target="drinkware" class="nav-filter shrink-0 px-4 py-1.5 rounded-full hover:text-brandPinkText transition">Drinkware</button>
+            <button data-target="bags" class="nav-filter shrink-0 px-4 py-1.5 rounded-full hover:text-brandPinkText transition">Bags</button>
+            <button data-target="accessories" class="nav-filter shrink-0 px-4 py-1.5 rounded-full hover:text-brandPinkText transition">Accessories</button>
         </nav>
     </header>
 
@@ -62,7 +69,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 flex flex-col sm:flex-row items-center gap-8 relative z-10">
             <img src="logo-transparency.png" alt="Sophie's Creations" class="h-40 sm:h-56 w-auto object-contain shrink-0">
             <div class="text-center sm:text-left">
-                <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-brandDark uppercase">Sophies <span class="text-brandPink">Creations</span></h1>
+                <h1 class="font-display text-3xl sm:text-4xl font-black tracking-tight text-brandDark uppercase">Sophies <span class="text-brandPinkText">Creations</span></h1>
                 <p class="mt-2 text-base sm:text-lg text-gray-500 font-medium italic">I put the personality in gift-giving!</p>
                 <p class="mt-4 text-sm text-gray-500 max-w-md">Custom tumblers, bags & accessories personalized just for you. Browse the catalogue below and order directly via WhatsApp.</p>
             </div>
@@ -76,10 +83,10 @@
                 <div>
                     <h3 class="text-xs font-bold text-brandDark uppercase tracking-wider mb-3 pb-1 border-b border-gray-200">Categories</h3>
                     <div class="flex flex-col items-start space-y-2 text-sm font-medium text-gray-600">
-                        <button data-target="all" class="sidebar-filter text-brandPink font-bold transition flex items-center justify-between w-full"><span>View All</span> <span id="count-all" class="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full font-normal">0</span></button>
-                        <button data-target="drinkware" class="sidebar-filter hover:text-brandPink transition flex items-center justify-between w-full"><span>Drinkware & Tumblers</span> <span id="count-drinkware" class="bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded-full font-normal">0</span></button>
-                        <button data-target="bags" class="sidebar-filter hover:text-brandPink transition flex items-center justify-between w-full"><span>Bags & Pouches</span> <span id="count-bags" class="bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded-full font-normal">0</span></button>
-                        <button data-target="accessories" class="sidebar-filter hover:text-brandPink transition flex items-center justify-between w-full"><span>Custom Accessories</span> <span id="count-accessories" class="bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded-full font-normal">0</span></button>
+                        <button data-target="all" class="sidebar-filter px-3 py-2 rounded-lg bg-brandPinkText/10 text-brandPinkText font-bold transition flex items-center justify-between w-full"><span>View All</span> <span id="count-all" class="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full font-normal">0</span></button>
+                        <button data-target="drinkware" class="sidebar-filter px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-brandPinkText transition flex items-center justify-between w-full"><span>Drinkware & Tumblers</span> <span id="count-drinkware" class="bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded-full font-normal">0</span></button>
+                        <button data-target="bags" class="sidebar-filter px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-brandPinkText transition flex items-center justify-between w-full"><span>Bags & Pouches</span> <span id="count-bags" class="bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded-full font-normal">0</span></button>
+                        <button data-target="accessories" class="sidebar-filter px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-brandPinkText transition flex items-center justify-between w-full"><span>Custom Accessories</span> <span id="count-accessories" class="bg-gray-100 text-gray-500 text-xs px-2 py-0.5 rounded-full font-normal">0</span></button>
                     </div>
                 </div>
             </div>
@@ -98,10 +105,10 @@
                 </div>
                 <div class="p-4 flex flex-col flex-grow">
                   <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                  <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">20oz Skinny Tumbler</h2>
+                  <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">20oz Skinny Tumbler</h2>
                   <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                     <span class="text-base font-black text-brandDark">$70.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2020oz%20Skinny%20Tumbler%20%28%2470.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2020oz%20Skinny%20Tumbler%20%28%2470.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                   </div>
                 </div>
               </div>
@@ -112,10 +119,10 @@
                 </div>
                 <div class="p-4 flex flex-col flex-grow">
                   <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                  <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">20oz Swing Tumbler</h2>
+                  <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">20oz Swing Tumbler</h2>
                   <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                     <span class="text-base font-black text-brandDark">$70.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2020oz%20Swing%20Tumbler%20%28%2470.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2020oz%20Swing%20Tumbler%20%28%2470.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                   </div>
                 </div>
               </div>
@@ -126,10 +133,10 @@
 		    </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">16oz Water Bottle</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">16oz Water Bottle</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$65.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2016oz%20Water%20Bottle%20%28%2465.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2016oz%20Water%20Bottle%20%28%2465.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -140,10 +147,10 @@
                     </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">12oz Water Bottle</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">12oz Water Bottle</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$50.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2012oz%20Water%20Bottle%20%28%2450.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2012oz%20Water%20Bottle%20%28%2450.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -154,10 +161,10 @@
                     </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">40oz Tumbler</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">40oz Tumbler</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$100.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2040oz%20Tumbler%20%28%24100.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2040oz%20Tumbler%20%28%24100.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -168,10 +175,10 @@
                 </div>
                 <div class="p-4 flex flex-col flex-grow">
                   <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                  <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">30oz Swing Tumbler</h2>
+                  <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">30oz Swing Tumbler</h2>
                   <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                     <span class="text-base font-black text-brandDark">$85.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2030oz%20Swing%20Tumbler%20%28%2485.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2030oz%20Swing%20Tumbler%20%28%2485.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                   </div>
                 </div>
               </div>
@@ -182,10 +189,10 @@
                 </div>
                 <div class="p-4 flex flex-col flex-grow">
                   <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                  <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">12oz Wine Tumbler</h2>
+                  <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">12oz Wine Tumbler</h2>
                   <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                     <span class="text-base font-black text-brandDark">$40.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2012oz%20Wine%20Tumbler%20%28%2440.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2012oz%20Wine%20Tumbler%20%28%2440.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                   </div>
                 </div>
               </div>
@@ -196,10 +203,10 @@
                     </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">13.5oz Glass Cup</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">13.5oz Glass Cup</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$45.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2013.5oz%20Glass%20Cup%20%28%2445.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2013.5oz%20Glass%20Cup%20%28%2445.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -210,10 +217,10 @@
                     </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">16oz Frosted Glass Cup</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">16oz Frosted Glass Cup</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$40.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2016oz%20Frosted%20Glass%20Cup%20%28%2440.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2016oz%20Frosted%20Glass%20Cup%20%28%2440.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -224,10 +231,10 @@
                     </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">15oz Tea Mug</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">15oz Tea Mug</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$40.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2015oz%20Tea%20Mug%20%28%2440.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%2015oz%20Tea%20Mug%20%28%2440.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -238,10 +245,10 @@
                     </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Drinkware</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Snow Globe Tumbler</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Snow Globe Tumbler</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$60.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Snow%20Globe%20Tumbler%20%28%2460.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Snow%20Globe%20Tumbler%20%28%2460.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -252,10 +259,10 @@
 		    </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Bags</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">2 Tone Tote Bag</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">2 Tone Tote Bag</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$25.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%202%20Tone%20Tote%20Bag%20%28%2425.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%202%20Tone%20Tote%20Bag%20%28%2425.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -266,10 +273,10 @@
 		    </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Bags</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Canvas Bag & Pouch Set</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Canvas Bag & Pouch Set</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$55.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Canvas%20Bag%20%26%20Pouch%20Set%20%28%2455.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Canvas%20Bag%20%26%20Pouch%20Set%20%28%2455.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -280,10 +287,10 @@
 		    </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Accessories</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Custom Key Chain</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Custom Key Chain</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$15.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Custom%20Key%20Chain%20%28%2415.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Custom%20Key%20Chain%20%28%2415.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -294,10 +301,10 @@
 		    </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Accessories</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Bottle Opener Keyring</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Bottle Opener Keyring</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$15.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Bottle%20Opener%20Keyring%20%28%2415.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Bottle%20Opener%20Keyring%20%28%2415.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -308,10 +315,10 @@
 		    </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Accessories</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Custom Metal Magnet</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Custom Metal Magnet</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$15.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Custom%20Metal%20Magnet%20%28%2415.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Custom%20Metal%20Magnet%20%28%2415.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -322,10 +329,10 @@
     			</div>
    			<div class="p-4 flex flex-col flex-grow">
      			   <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Accessories</span>
-     			   <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Ceramic Coasters</h2>
+     			   <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Ceramic Coasters</h2>
      			   <div class="mt-auto pt-2 flex items-center justify-between gap-2">
             			<span class="text-base font-black text-brandDark">$15.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Ceramic%20Coasters%20%28%2415.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Ceramic%20Coasters%20%28%2415.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
        			   </div>
    			 </div>
 		</div>
@@ -336,10 +343,10 @@
                     </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Accessories</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Acrylic Frame</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Acrylic Frame</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$30.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Acrylic%20Frame%20%28%2430.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Acrylic%20Frame%20%28%2430.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -350,10 +357,10 @@
                     </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Accessories</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Photo Frame</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Photo Frame</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$40.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Photo%20Frame%20%28%2440.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Photo%20Frame%20%28%2440.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -364,10 +371,10 @@
 		    </div>
                     <div class="p-4 flex flex-col flex-grow">
                         <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Accessories</span>
-                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Custom Bookmarks</h2>
+                        <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Custom Bookmarks</h2>
                         <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                             <span class="text-base font-black text-brandDark">$5.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Custom%20Bookmarks%20%28%245.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Custom%20Bookmarks%20%28%245.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                         </div>
                     </div>
                 </div>
@@ -378,10 +385,10 @@
                   </div>
                   <div class="p-4 flex flex-col flex-grow">
                       <span class="text-xs font-bold text-brandGreen uppercase tracking-wider mb-1">Accessories</span>
-                      <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPink transition line-clamp-2 mb-2">Custom Mouse Pad</h2>
+                      <h2 class="text-sm font-semibold text-brandDark group-hover:text-brandPinkText transition line-clamp-2 mb-2">Custom Mouse Pad</h2>
                       <div class="mt-auto pt-2 flex items-center justify-between gap-2">
                           <span class="text-base font-black text-brandDark">$25.00</span>
-                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Custom%20Mouse%20Pad%20%28%2425.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0">Order</a>
+                    <a href="https://wa.me/18696606586?text=Hi%20Sophie%27s%20Creations%21%20I%27d%20like%20to%20order%20the%20Custom%20Mouse%20Pad%20%28%2425.00%29." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 justify-center bg-brandGreen text-white text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3.5 h-3.5"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.35c1.37.72 2.93 1.13 4.62 1.13h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.72 13.95c-.24.68-1.18 1.24-1.94 1.4-.52.11-1.19.2-3.46-.74-2.9-1.2-4.77-4.15-4.92-4.34-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .55.01.18.01.42-.07.66.5.24.58.83 2.01.9 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.21.72-.84.91-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>Order</a>
                       </div>
                   </div>
               </div>
@@ -399,13 +406,13 @@
                         <div class="flex flex-col items-center gap-2 bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 w-fit">
                             <img src="logo-transparency.png" alt="Sophie's Creations Logo" class="h-20 w-auto object-contain">
                             <div class="flex flex-col mt-1">
-                                <span class="text-xl font-black tracking-tight text-white uppercase">Sophie's <span class="text-brandPink">Creations</span></span>
+                                <span class="font-display text-xl font-black tracking-tight text-white uppercase">Sophie's <span class="text-brandPink">Creations</span></span>
                                 <span class="text-xs text-gray-400 font-medium italic">I put the personality in gift-giving!</span>
                             </div>
                         </div>
                         
                         <div class="max-w-md">
-                            <h3 class="text-xl font-bold tracking-tight text-white">Get In Touch With Us</h3>
+                            <h3 class="font-display text-xl font-bold tracking-tight text-white">Get In Touch With Us</h3>
                             <p class="text-sm text-gray-400 mt-2 leading-relaxed">Ready to order, customize a gift, or ask a question? Reach out through any of our channels below!</p>
                         </div>
 
@@ -480,19 +487,21 @@
             navButtons.forEach(btn => {
                 if (btn.getAttribute('data-target') === category) {
                     btn.classList.add('bg-brandPink', 'text-white', 'font-bold');
-                    btn.classList.remove('hover:text-brandPink');
+                    btn.classList.remove('hover:text-brandPinkText');
                 } else {
                     btn.classList.remove('bg-brandPink', 'text-white', 'font-bold');
-                    btn.classList.add('hover:text-brandPink');
+                    btn.classList.add('hover:text-brandPinkText');
                 }
             });
 
             // Sync Sidebar Styling
             sidebarButtons.forEach(btn => {
                 if (btn.getAttribute('data-target') === category) {
-                    btn.classList.add('text-brandPink', 'font-bold');
+                    btn.classList.add('bg-brandPinkText/10', 'text-brandPinkText', 'font-bold');
+                    btn.classList.remove('hover:bg-gray-100', 'hover:text-brandPinkText');
                 } else {
-                    btn.classList.remove('text-brandPink', 'font-bold');
+                    btn.classList.remove('bg-brandPinkText/10', 'text-brandPinkText', 'font-bold');
+                    btn.classList.add('hover:bg-gray-100', 'hover:text-brandPinkText');
                 }
             });
         }
