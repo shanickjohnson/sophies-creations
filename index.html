@@ -36,11 +36,11 @@
                 </div>
             </div>
             
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600">
-                <button data-target="all" class="nav-filter text-brandPink border-b-2 border-brandPink pb-1 transition">All Products</button>
-                <button data-target="drinkware" class="nav-filter hover:text-brandPink pb-1 transition">Drinkware</button>
-                <button data-target="bags" class="nav-filter hover:text-brandPink pb-1 transition">Bags</button>
-                <button data-target="accessories" class="nav-filter hover:text-brandPink pb-1 transition">Accessories</button>
+            <nav class="hidden md:flex gap-2 text-sm font-semibold text-gray-600">
+                <button data-target="all" class="nav-filter px-4 py-1.5 rounded-full bg-brandPink text-white font-bold transition">All Products</button>
+                <button data-target="drinkware" class="nav-filter px-4 py-1.5 rounded-full hover:text-brandPink transition">Drinkware</button>
+                <button data-target="bags" class="nav-filter px-4 py-1.5 rounded-full hover:text-brandPink transition">Bags</button>
+                <button data-target="accessories" class="nav-filter px-4 py-1.5 rounded-full hover:text-brandPink transition">Accessories</button>
             </nav>
 
             <div class="flex items-center gap-4">
@@ -48,13 +48,26 @@
             </div>
         </div>
 
-        <nav class="md:hidden flex gap-5 overflow-x-auto px-4 pb-3 text-sm font-semibold text-gray-600" aria-label="Product categories">
-            <button data-target="all" class="nav-filter shrink-0 text-brandPink border-b-2 border-brandPink pb-1 transition">All Products</button>
-            <button data-target="drinkware" class="nav-filter shrink-0 hover:text-brandPink pb-1 transition">Drinkware</button>
-            <button data-target="bags" class="nav-filter shrink-0 hover:text-brandPink pb-1 transition">Bags</button>
-            <button data-target="accessories" class="nav-filter shrink-0 hover:text-brandPink pb-1 transition">Accessories</button>
+        <nav class="md:hidden flex gap-2 overflow-x-auto px-4 pb-3 text-sm font-semibold text-gray-600" aria-label="Product categories">
+            <button data-target="all" class="nav-filter shrink-0 px-4 py-1.5 rounded-full bg-brandPink text-white font-bold transition">All Products</button>
+            <button data-target="drinkware" class="nav-filter shrink-0 px-4 py-1.5 rounded-full hover:text-brandPink transition">Drinkware</button>
+            <button data-target="bags" class="nav-filter shrink-0 px-4 py-1.5 rounded-full hover:text-brandPink transition">Bags</button>
+            <button data-target="accessories" class="nav-filter shrink-0 px-4 py-1.5 rounded-full hover:text-brandPink transition">Accessories</button>
         </nav>
     </header>
+
+    <section class="bg-white border-b border-gray-100 relative overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-72 h-72 bg-brandPink opacity-10 rounded-full blur-3xl"></div>
+        <div class="absolute -left-24 -bottom-24 w-72 h-72 bg-brandGreen opacity-10 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 flex flex-col sm:flex-row items-center gap-8 relative z-10">
+            <img src="logo-transparency.png" alt="Sophie's Creations" class="h-40 sm:h-56 w-auto object-contain shrink-0">
+            <div class="text-center sm:text-left">
+                <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-brandDark uppercase">Sophies <span class="text-brandPink">Creations</span></h1>
+                <p class="mt-2 text-base sm:text-lg text-gray-500 font-medium italic">I put the personality in gift-giving!</p>
+                <p class="mt-4 text-sm text-gray-500 max-w-md">Custom tumblers, bags & accessories personalized just for you. Browse the catalogue below and order directly via WhatsApp.</p>
+            </div>
+        </div>
+    </section>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row gap-8">
         
@@ -466,9 +479,11 @@
             // Sync Top Nav Styling
             navButtons.forEach(btn => {
                 if (btn.getAttribute('data-target') === category) {
-                    btn.classList.add('text-brandPink', 'border-b-2', 'border-brandPink', 'font-bold');
+                    btn.classList.add('bg-brandPink', 'text-white', 'font-bold');
+                    btn.classList.remove('hover:text-brandPink');
                 } else {
-                    btn.classList.remove('text-brandPink', 'border-b-2', 'border-brandPink', 'font-bold');
+                    btn.classList.remove('bg-brandPink', 'text-white', 'font-bold');
+                    btn.classList.add('hover:text-brandPink');
                 }
             });
 
